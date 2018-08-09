@@ -14,9 +14,7 @@ https://docs.docker.com/engine/reference/builder/#cmd
 In order to work around these, one option is to create a script to set the
 necessary environment variables:
 
-``` RUN echo
-"ASPNETCORE_URLS=http://0.0.0.0:\$PORT\nDOTNET_RUNNING_IN_CONTAINER=true" >
-/app/setup_heroku_env.sh && chmod +x /app/setup_heroku_env.sh ```
+    RUN echo "ASPNETCORE_URLS=http://0.0.0.0:\$PORT\nDOTNET_RUNNING_IN_CONTAINER=true" > /app/setup_heroku_env.sh && chmod +x /app/setup_heroku_env.sh ```
 
 This creates a script at `/app/setup_heroku_env.sh` that can later be sourced
 to set the environment variables correctly at runtime.
